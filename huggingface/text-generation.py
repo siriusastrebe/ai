@@ -1,10 +1,10 @@
 # https://www.youtube.com/watch?v=QEaBAZQCtwE&t=239s
 
 from transformers import pipeline
-generator = pipeline("text-generation", model="distilgpt2")
+generator = pipeline("text-generation")
 
 res = generator(
-  "In this course, we will teach you how to",
+  "An icy shiver went down his veins. He looked in front of him and saw",
   max_length=300,
   num_return_sequences=2,
 )
