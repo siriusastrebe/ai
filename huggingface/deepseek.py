@@ -11,15 +11,12 @@ api_key = os.getenv("HUGGINGFACE_KEY")
 print(api_key)
 
 # Set Hugging Face API Key from Environment Variable
-huggingface_model = "TinyLlama/TinyLlama-1.1B-Chat-v1.0"
+huggingface_model = "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B"
 
 required_files = [
-  "special_tokens_map.json",
   "generation_config.json",
   "tokenizer_config.json",
   "model.safetensors",
-  "eval_results.json",
-  "tokenizer.model",
   "tokenizer.json",
   "config.json"
 ]
@@ -43,5 +40,9 @@ text_generation_pipeline = pipeline(
   truncation=True,
 )
 
-response = text_generation_pipeline("What's the next blockbuster movie title about?")
+response = text_generation_pipeline("Why did the chicken cross the road?")
 print(response)
+
+
+response2 = text_generation_pipeline("What lays hidden beneath the Earth?")
+print(response2)
